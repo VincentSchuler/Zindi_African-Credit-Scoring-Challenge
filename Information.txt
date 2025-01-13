@@ -1,0 +1,11 @@
+My solution is very straight-forward, and all the code has been carefully commented to be understood more easily.
+
+Most efforts were concentrated towards Feature Engineering, as ~1700 columns were created. However, only 149 of them were used in the final models.
+
+These models are 6 LightGBM and 7 XGBoost, ensembled with a simple average of predictions. However, the ensemble didn't prove very useful in this competition, and I was able to outperform both my public and private score with a single LGBM.
+
+In the end, a special post-processing method was used to gain a considerable score boost. I described it both in my notebook and i the Zindi forum : https://zindi.africa/competitions/african-credit-scoring-challenge/discussions/24427
+
+I consisted in assigning the value "1" to all loans of type 3 (Ghana) that are the very last of each Customer.
+
+Note : requirements.txt was created with the line "!pip freeze > requirements.txt"
